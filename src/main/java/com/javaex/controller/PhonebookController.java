@@ -28,14 +28,14 @@ public class PhonebookController extends HttpServlet {
 		//db데이터 가져오기
 		PhonebookDao phonebookDao = new PhonebookDao();
 		List<PersonVo> personList = phonebookDao.getPersonList();
-		//System.out.println(personList);
+		System.out.println(personList);
 		
 		//화면그리기 --> 포워드
 		//request 에 리스트주소 넣기
 		request.setAttribute("personList", personList);
 		
 		//포워드
-		RequestDispatcher rd = request.getRequestDispatcher("/list.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/list.jsp");
 		rd.forward(request, response);
 		
 	}

@@ -23,26 +23,34 @@
 	
 	<p>등록된 전화번호 리스트 입니다.</p>
 
-	
+	<%for(int i=0; i<personList.size(); i++){%>
 	<table border="1">
 		<tbody>
 			<tr>
 				<th>이름(name)</th>
-				<td>이효리</td>
+				<td><%=personList.get(i).getName()%></td>
 			</tr>
 			<tr>
 				<th>핸드폰(hp)</th>
-				<td>010-1111-1111</td>
+				<td><%=personList.get(i).getHp()%></td>
 			</tr>
 			<tr>
 				<th>회사(company)</th>
-				<td>02-2222-2222</td>
+				<td><%=personList.get(i).getCompany()%></td>
 			</tr>
+			<tr>
+				<td>[수정폼으로 이동]</td>
+				<td>[삭제]</td>
+			</tr>
+			
 		</tbody>
 	</table>
 	<br>
+	<%} %>
 
-
-
+	<br>
+	<a href="#">등록폼으로 이동</a>
+	
+	
 </body>
 </html>
