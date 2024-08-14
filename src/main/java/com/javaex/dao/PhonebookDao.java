@@ -64,6 +64,30 @@ public class PhonebookDao {
 		}
 	}
 
+	//사람정보 저장
+	public int insertPerson(PersonVo personVo) {
+		
+		System.out.println("dao 저장");
+		System.out.println(personVo);
+		
+		this.getConnection();
+		
+		try {
+		   
+		} catch (SQLException e) {
+			System.out.println("error:" + e);
+		}
+		
+		
+		this.close();
+		
+		
+		
+		return 0;
+		
+	}
+	
+	
 	
 	//리스트 가져오기
 	public List<PersonVo> getPersonList() {
