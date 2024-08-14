@@ -33,7 +33,6 @@ public class PhonebookController extends HttpServlet {
 			//db데이터 가져오기
 			PhonebookDao phonebookDao = new PhonebookDao();
 			List<PersonVo> personList = phonebookDao.getPersonList();
-			System.out.println(personList);
 			
 			//화면그리기 --> 포워드
 			//request 에 리스트주소 넣기
@@ -71,9 +70,29 @@ public class PhonebookController extends HttpServlet {
 			
 			
 			//Dao를 메모리에 올린다
-			//insertPerson(personVo) 사용해서 db에 저장한다
 			PhonebookDao phonebookDao = new PhonebookDao();
+			
+			//insertPerson(personVo) 사용해서 db에 저장한다
 			phonebookDao.insertPerson(personVo);
+			
+			
+			/*
+			//getPersonList() 사용해서 전체 리스트를 가져온다
+			List<PersonVo> personList = phonebookDao.getPersonList();
+			
+			//화면그리기 --> 포워드
+			//request 에 리스트주소 넣기
+			request.setAttribute("personList", personList);
+			
+			//포워드
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/list.jsp");
+			rd.forward(request, response);
+			
+			*/
+			
+			//리다이렉트
+			//http://localhost:8080/phonebook2/pbc?action=list
+			response.sendRedirect("/phonebook2/pbc?action=list");
 		}
 		
 		

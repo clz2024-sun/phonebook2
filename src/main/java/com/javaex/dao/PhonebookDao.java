@@ -67,23 +67,35 @@ public class PhonebookDao {
 	//사람정보 저장
 	public int insertPerson(PersonVo personVo) {
 		
-		System.out.println("dao 저장");
-		System.out.println(personVo);
+		int count = -1;
 		
 		this.getConnection();
-		
+				
 		try {
+			// 3. SQL문 준비 / 바인딩 / 실행
+			//*SQL문 준비
+			String query = "";
+			query += " insert into person ";
+			query += " values(null, ?, ?, ?) ";
+			
+			//*바인딩
+			pstmt = conn.prepareStatement(query);
+			pstmt.setString(1, personVo.getName());
+			pstmt.setString(2, personVo.getHp());
+			pstmt.setString(3, personVo.getCompany());
+			
+			//*실행
+			count = pstmt.executeUpdate();
+			
 		   
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
 		}
 		
-		
 		this.close();
+		System.out.println(count);
 		
-		
-		
-		return 0;
+		return count;
 		
 	}
 	
