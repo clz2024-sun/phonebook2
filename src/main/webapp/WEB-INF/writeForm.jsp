@@ -35,7 +35,7 @@
 	
 	
 	<br><br>
-	<a href="">리스트로 가기</a>
+	<a href="/phonebook2/pbc?action=list">리스트로 가기</a>
 	
 	
 </body>
