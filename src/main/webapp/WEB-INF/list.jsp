@@ -39,7 +39,7 @@
 				<td><%=personList.get(i).getCompany()%></td>
 			</tr>
 			<tr>
-				<td>[수정폼으로 이동]</td>
+				<td><a href="http://localhost:8080/phonebook2/pbc?action=editform&no=<%=personList.get(i).getPersonId()%>">[수정폼으로 이동]</a></td>
 				<td>[삭제]</td>
 			</tr>
 			

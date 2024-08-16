@@ -16,7 +16,7 @@
 	<form action="/phonebook2/pbc" method="get">
 		<div>
 			<label for="txt-name">이름(name):</label> 
-			<input id="txt-name" type="text" name="name" value="" placeholder="이름">
+			<input id="txt-name" type="text" name="aaa" value="" placeholder="이름">
 		</div>
 		
 		<div>
